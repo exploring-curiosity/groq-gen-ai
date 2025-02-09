@@ -60,8 +60,8 @@ def get_thinking():
         ],
         model="llama-3.3-70b-versatile",
     )
-
-    return jsonify({"data": chat_completion.choices[0].message.content})
+    response_msg = chat_completion.choices[0].message.content
+    return jsonify({"data": response_msg })
 
 @app.route('/api/groq_metrics', methods=['GET'])
 def get_metrics():
