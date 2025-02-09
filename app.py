@@ -5,6 +5,7 @@ from groq import Groq
 from datetime import datetime, timedelta
 
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 client = Groq(
     api_key="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",
@@ -13,6 +14,7 @@ client = Groq(
 api_key = '4dhMFQVrFQKE5SRa8RKV4s2y5wUBdDNP0vzFm6Mt'
 
 app = Flask(__name__)
+CORS(app)
 
 # GET endpoint to fetch all items
 @app.route('/api/groq_thinks', methods=['GET'])
